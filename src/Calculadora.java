@@ -133,12 +133,12 @@ public class Calculadora {
 
 	// @param total Acumulado de todas las operaciones de suma
 
-	public void SumaAcumulado(double acumulado) {
+	public double SumaAcumulado(double acumulado) {
 		// suma el acumulado de todas las operaciones de suma previamente calculadas
-		double total;
-	}
-}
-
+	double total = 0 ;
+	total = total + acumulado;
+	return total;
+	}}
 
 	/**
 	 * Esta clase corresponde al bloque 2, referente a la resta del ejercicio 1 de Entornos de desarrollo. Trabajo en grupo
