@@ -56,7 +56,17 @@ public class Calculadora {
 	 * 
 	 */
 	public float Suma_reales(float n1, float n2) {
-		return n1 + n2; // suma los números reales n1 + n2
+		float suma = 0;
+		if (n1 >= 0 & n2 >= 0) {
+			suma = n1 + n2;
+		} else {
+			System.out.println("No admite negativos");
+		}
+		
+		return suma;
+		
+		
+		// suma los números reales n1 + n2
 	}
 
 	/**
@@ -78,7 +88,14 @@ public class Calculadora {
 	 */
 
 	public int Suma_enteros(int n1, int n2) {
-		return n1 + n2; // suma los números enteros n1 + n2
+		int suma = 0;
+		if (n1 >= 0 & n2 >= 0) {
+			suma = n1 + n2;
+		} else {
+			System.out.println("No admite negativos");
+		}
+		
+		return suma; // suma los números enteros n1 + n2
 	}
 
 	/**
@@ -103,14 +120,29 @@ public class Calculadora {
 
 	public float Suma_reales3(float n1, float n2, float n3) {
 
-		return n1 + n2 + n3; // suma los números reales n1 + n2 + n3
+		float suma = 0;
+		if (n1 >= 0 & n2 >= 0 & n3 >=0 ) {
+			suma = n1 + n2 + n3;
+		} else {
+			System.out.println("No admite negativos");
+		}
+		
+		return suma; // suma los números reales n1 + n2 + n3
 	}
 
 	/**
 	 * Atributo de clase valor acumulado, para calcular el acumulado total de la Suma.
 	 */
 	
-	private int acumulado = 0;
+	private double acumulado = 0;
+	
+	public double getAcumulado() {
+		return acumulado;
+	}
+
+	public void setAcumulado(double acumulado) {
+		this.acumulado = acumulado;
+	}
 	
 	
 	/**
@@ -134,11 +166,15 @@ public class Calculadora {
 	// @param total Acumulado de todas las operaciones de suma
 
 	public double SumaAcumulado(double acumulado) {
+		
+		if(acumulado > 0)
+	        this.acumulado += acumulado;   
+		else 
+			System.out.println("No admite negativos");
+		
 		// suma el acumulado de todas las operaciones de suma previamente calculadas
-	double total = 0 ;
-	total = total + acumulado;
-	return total;
-	}}
+
+	return acumulado;}
 
 	/**
 	 * Esta clase corresponde al bloque 2, referente a la resta del ejercicio 1 de Entornos de desarrollo. Trabajo en grupo
@@ -174,9 +210,19 @@ public class Calculadora {
 	*/
 		
 		public double Resta_reales(double n1, double n2) {
-			return n1 - n2; // resta los números reales n1 - n2
-		}
-
+			 double resta = 0;
+			
+				if (n1 >= 0 & n2 >= 0 & n1 >= n2) {
+				 	
+					resta = n1 - n2;
+				 }else {
+					System.out.println("No admite negativos, como parámetros, ni en el resultado");
+					if (n2 > n1)
+					System.out.println("Como "+n2+ " es mayor que "+n1+ "se invalida");
+				}
+				return resta; // resta los números reales n1 - n2
+			}
+		
 	/**
 	 * Este método devuelve la resta dos números enteros y retorna el resultado como un int.
 	 * 
@@ -197,7 +243,18 @@ public class Calculadora {
 	 */
 
 		public int Resta_enteros(int n1, int n2) {
-			return n1 - n2; // resta los números enteros n1 - n2
+			int resta = 0;
+			
+			if (n1 >= 0 & n2 >= 0 & n1 >= n2) {
+			 	
+				resta = n1 - n2;
+			 }else {
+				System.out.println("No admite negativos, como parámetros, ni en el resultado");
+				if (n2 > n1)
+				System.out.println("Como "+n2+ " es mayor que "+n1+ "se invalida");
+			}
+			return resta; 
+		 // resta los números enteros n1 - n2
 		}
 
 	/**
@@ -220,14 +277,33 @@ public class Calculadora {
 	 */
 
 		public  double Resta_reales3(double n1, double n2, double n3) {
-			return n1 - n2 - n3; // resta los números reales n1 - n2 - n3
-		}
+			double resta = 0;
+			
+			if (n1 >= 0 & n2 >= 0 & n3 >= 0 & n1 >= n2 + n3) {
+			 	
+				resta = n1 - n2 - n3;
+			 }else {
+				System.out.println("No admite negativos, como parámetros, ni en el resultado");
+				if (n2 > n1 + n3)
+				System.out.println("Como "+n2+ " y " +n3+  " es mayor que "+n1+ "se invalida");
+			}
+			return resta; 
+		} // resta los números reales n1 - n2 - n3
+		
 
 		/**
 		 * Atributo de clase valor acumulado, para calcular el acumulado total de la Resta
 		 */
 		
 	private int acumulado = 0;
+	
+		public int getAcumulado() {
+			return acumulado;
+		}
+
+		public void setAcumulado(int acumulado) {
+			this.acumulado = acumulado;
+		}
 
 		/**
 		 * Método que suma con valor acumulado y lo guarda
@@ -293,8 +369,16 @@ public class Calculadora {
 		 */
 
 		public double multiplicar(double operando1, double operando2) {
-			double resultado = operando1 * operando2;
-			return resultado;
+			double producto = 0;
+			if (operando1 >= 0 & operando2 >= 0) {
+				producto = operando1 * operando2;
+			} else {
+				System.out.println("No admite negativos, como parámetros, ni en el resultado");
+			}
+			
+			return producto; // suma los números enteros n1 + n2
+	
+			
 		}
 
 		/**
@@ -319,9 +403,16 @@ public class Calculadora {
 		 */
 
 		public int multiplicar_enteros(int operando1, int operando2) {
-			int resultado = operando1 * operando2;
-			return resultado;
-
+			int producto = 0;
+			if (operando1 >= 0 & operando2 >= 0) {
+				producto = operando1 * operando2;
+			} else {
+				System.out.println("No admite negativos, como parámetros, ni en el resultado");
+			}
+			
+			return producto; // suma los números enteros n1 + n2
+	
+			
 		}
 
 	/**
@@ -342,9 +433,16 @@ public class Calculadora {
 	 */
 
 		public double multiplicar_reales3(double operando1, double operando2, double operando3) {
-			double resultado = operando1 * operando2 * operando3;
-			return resultado;
-
+			double producto = 0;
+			if (operando1 >= 0 & operando2 >= 0 & operando3 >= 0) {
+				producto = operando1 * operando2 * operando3;
+			} else {
+				System.out.println("No admite negativos, como parámetros, ni en el resultado");
+			}
+			
+			return producto; // suma los números enteros n1 + n2
+	
+			
 		}
 
 		/**
@@ -488,7 +586,20 @@ public class Calculadora {
 	 */
 		
 		public double cociente_reales(double n1, double n2) {
-			return (n1 / n2); // divide el primer número real entre el segundo real
+			double cociente = 0;
+			if (n1 >= 0 & n2 > 0) {
+				cociente = n1 / n2;
+			} else  {
+				System.out.println("No admite negativos, como parámetros, ni en el resultado");
+				if (n2 == 0) {
+					System.out.println(" El denominador no puede ser 0");
+				}
+			}
+			
+			return cociente; // suma los números enteros n1 + n2
+	
+			
+		 // divide el primer número real entre el segundo real
 		}
 
 	/**
@@ -514,7 +625,18 @@ public class Calculadora {
 	 *      
 	 */
 		public int cociente_enteros(int n1, int n2) {
-			return n1 / n2;
+			int cociente = 0;
+			if (n1 >= 0 & n2 > 0) {
+				cociente = n1 / n2;
+			} else  {
+				System.out.println("No admite negativos, como parámetros, ni en el resultado");
+				if (n2 == 0) {
+					System.out.println(" El denominador no puede ser 0");
+				}
+			}
+			
+			return cociente; // suma los números enteros n1 + n2
+	
 		}
 
 	/**
@@ -535,7 +657,19 @@ public class Calculadora {
 	 * 
 	 */
 		public double inverso(double n1) {
-			return 1 / n1;
+			
+			double cociente = 0;
+			if (n1 > 0 ) {
+				cociente = 1 / n1;
+			} else  {
+				System.out.println("No admite negativos, como parámetros, ni en el resultado");
+				if (n1 == 0) {
+					System.out.println(" El denominador no puede ser 0");
+				}
+			}
+			
+			return cociente; // suma los números enteros n1 + n2
+	
 		}
 
 	/**
@@ -569,5 +703,5 @@ public class Calculadora {
 	}
 
 
-	}
+	}}
 
